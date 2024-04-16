@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") -%> <% booksEJS.forEach(function(book){ %>
+<div class="book">
+	<div class="image">
+		<img height="150px" src="<%=book.img_source%>" />
+	</div>
+	<div class="info">
+		<h2><a href="/book/<%=book.short_name%>"><%=book.title%></a></h2>
+		<h3>By: <%=book.author%></h3>
+		<h3><%=book.summary%></h3>
+		<h4>Rating: <%=book.rating%></h4>
+		<h4>Date Read: <%=book.date_read%></h4>
+		<h5>ISBN: <%=book.isbn%></h5>
+	</div>
+</div>
+<% }); %> <%- include("partials/footer.ejs") -%>

@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") -%>
+<div class="edit">
+    <form action="/edit" method="POST">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value="<%=bookEJSEdit.title%>"><br>
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author" value="<%=bookEJSEdit.author%>"><br>
+    <label for="rating">Rating (/10):</label><br>
+    <input type="number" id="rating" name="rating" value="<%=bookEJSEdit.rating%>"><br>
+    <label for="date">Date Read:</label><br>
+    <input type="date" id="date" name="date" placeholder="<%=bookEJSEdit.date_read%>" value="<%=bookEJSEdit.date_read%>" min="2000-01-01" max="2024-12-31"><br>
+    <label for="isbn">ISBN:</label><br>
+    <input type="number" id="isbn" name="isbn" value="<%=bookEJSEdit.isbn%>"><br>
+    <label for="summary">Summary:</label><br>
+    <input type="text" id="summary" name="summary" value="<%=bookEJSEdit.summary%>"><br>
+    <label for="shortname">Short Name:</label><br>
+    <input type="text" id="shortname" name="shortname" value="<%=bookEJSEdit.short_name%>"><br>
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" name="description" value="<%=bookEJSEdit.description%>"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<%- include("partials/footer.ejs") -%>

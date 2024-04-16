@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles/main.css" />
+		<title>BookReviews</title>
+	</head>
+	<body>
+		<main>
+			<div class="navbar">
+				<div class="navbartitle">
+					<h1>Book Reviews by Peter</h1>
+				</div>
+				<div class="navbaralerts">
+					<% if (locals.alertMessageEJS) {%><%=alertMessageEJS%> <% };%>
+				</div>
+				<ul class="navbarbuttons">
+					<li id="home">
+						<a href="/">Home</a>
+					</li>
+					<li id="new">
+						<a href="/new">New</a>
+					</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>

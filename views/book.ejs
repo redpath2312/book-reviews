@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") -%>
+<div class="book-page-container">
+	<div class="edit_header">
+		<ul>
+			<li id="edit">
+				<a href="/edit">Edit</a>
+			</li>
+			<li id="delete">
+				<button onClick="openDeleteModal()">Delete</button>
+				<!-- <a onclick="myDeleteFunction()">Delete</a> -->
+			</li>
+		</ul>
+	</div>
+
+	<div id="deleteModal" style="display: none">
+		<h3>Are you sure?</h3>
+		<p><a href="/delete">Yes I am sure</a></p>
+		<p><button onClick="hideDeleteModal()">No, take me back</button></p>
+	</div>
+
+	<div class="book">
+		<div class="image">
+			<img height="150px" src="<%=bookEJS.img_source%>" />
+		</div>
+		<div class="info">
+			<h2><%=bookEJS.title%></h2>
+			<h3>By: <%=bookEJS.author%></h3>
+			<h3><%=bookEJS.summary%></h3>
+			<h4>Rating: <%=bookEJS.rating%></h4>
+			<h4>Date Read: <%=bookEJS.date_read%></h4>
+			<h5>ISBN: <%=bookEJS.isbn%></h5>
+
+			<div class="book_description">
+				<p><%=bookEJS.description%></p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function openDeleteModal() {
+		document.querySelector("#deleteModal").style.display = "block";
+	}
+	function hideDeleteModal() {
+		document.querySelector("#deleteModal").style.display = "none";
+	}
+</script>
+<%- include("partials/footer.ejs") -%>
