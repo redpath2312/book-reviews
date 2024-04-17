@@ -75,8 +75,12 @@ app.get("/new", (req, res) => {
 });
 
 app.get("/edit", (req, res) => {
-	res.render("edit.ejs", { bookEJSEdit: requestedBook });
-});
+	const formattedDate = requestedBook.date_read.toISOString().substring(0, 10);
+
+	requestedBook["date_read"] = formattedDate;
+
+	res.render("edit.ejs", { bookEJSEdit: {...requestedBook, date_read: formattedDate } });	
+})
 
 app.post("/edit", async (req, res) => {
 	const editedBook = {
@@ -89,7 +93,7 @@ app.post("/edit", async (req, res) => {
 		editedShortName: req.body.shortname,
 		editedDescription: req.body.description,
 	};
-	console.log(editedBook);
+	//console.log(editedBook);
 
 	try {
 		await db.query(
@@ -132,34 +136,34 @@ app.post("/new", async (req, res) => {
 	};
 	console.log(newBook);
 
-	//Now have the form data, we can see if there are any properties missing and making an empty props array for all the missing fields to help inform the user.
+	// //Now have the form data, we can see if there are any properties missing and making an empty props array for all the missing fields to help inform the user.
 
-	let emptyProps = [];	
+	// let emptyProps = [];	
 
-	for (const prop in newBook) {
-		if (newBook[prop] === "") {
-			emptyProps.push(prop);
-		}
-	}
+	// for (const prop in newBook) {
+	// 	if (newBook[prop] === "") {
+	// 		emptyProps.push(prop);
+	// 	}
+	// }
 
-	// We can craft a message to the user by referring to the empty props, and if there are any empty props the database won't be called.
-	let emptyPropsMessage = "";
-	if (emptyProps.length > 0) {
-		for (let newProp in emptyProps) {
-			// console.log(emptyProps[newProp]);
-			emptyPropsMessage += emptyProps[newProp] + ", ";
-		}
-		emptyPropsMessage +="is invalid/empty. Please check these fields and try submitting the information again.";
-		console.log(emptyPropsMessage);
-		currentAlertMessage = "Error: " + emptyPropsMessage;
-		res.render("new.ejs", {
-			alertMessageEJS: currentAlertMessage,
-			newBookEJS: newBook,
-		});
-		currentAlertMessage = "";
-	}
+	// // We can craft a message to the user by referring to the empty props, and if there are any empty props the database won't be called.
+	// let emptyPropsMessage = "";
+	// if (emptyProps.length > 0) {
+	// 	for (let newProp in emptyProps) {
+	// 		// console.log(emptyProps[newProp]);
+	// 		emptyPropsMessage += emptyProps[newProp] + ", ";
+	// 	}
+	// 	emptyPropsMessage +="is invalid/empty. Please check these fields and try submitting the information again.";
+	// 	console.log(emptyPropsMessage);
+	// 	currentAlertMessage = "Error: " + emptyPropsMessage;
+	// 	res.render("new.ejs", {
+	// 		alertMessageEJS: currentAlertMessage,
+	// 		newBookEJS: newBook,
+	// 	});
+	// 	currentAlertMessage = "";
+	// }
 
-	else 
+	// else 
 
 	try {
 		await db.query(

@@ -1,5 +1,5 @@
 html {
-	background-color: blanchedalmond;
+	background-color: #F9EFDB;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 h1 {
@@ -9,7 +9,7 @@ h1 {
 .navbar {
 	padding-top: 15px;
 	padding-bottom: 15px;
-	background-color: darkslategray;
+	background-color: #638889;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -31,11 +31,11 @@ li {
 	font-size: larger;
 }
 a:link {
-	color: brown;
+	color: #638889;
 	text-decoration: none;
 }
 a:visited {
-	color: burlywood;
+	color: #9DBC98;
 	text-decoration: none;
 }
 a:hover {
@@ -43,7 +43,7 @@ a:hover {
 	text-decoration: none;
 }
 a:active {
-	color: rgb(98, 71, 248);
+	color: #EBD9B4;
 	text-decoration: none;
 }
 
@@ -52,13 +52,13 @@ a:active {
 	text-align: center;
 	width: 100%;
 	height: 60px;
-	background-color: steelblue;
-	color: white;
+	background-color: #638889;
+	color:#F9EFDB;
 	align-content: center;
 }
 
 .new_form {
-	background-color: darksalmon;
+	background-color: #9DBC98;
 	padding: 5px;
 }
 
@@ -117,8 +117,8 @@ label {
 .book-page-container {
 	display: flex;
 	flex-direction: column;
-	color: rgb(110, 109, 109);
-	background-color: gainsboro;
+	color: #638889;
+	background-color: #F9EFDB;
 	justify-content: flex-start;
 }
 
@@ -131,7 +131,7 @@ label {
 	align-items: center;
 }
 .book_description {
-	color: rgb(110, 109, 109);
+	color: #638889;
 	background-color: blanchedalmond;
 	padding: 5px;
 }
@@ -147,7 +147,7 @@ label {
 #deleteModal {
 	width: 10%;
 	margin: 10px;
-	background-color: rgb(216, 210, 210);
+	background-color: #EBD9B4;
 	padding: 10px;
 	text-align: center;
 }

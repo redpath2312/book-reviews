@@ -4,30 +4,31 @@
 
 		<!--// onkeydown="return event.key != `Enter`;">  -->
 		
-		<label for="title">Title:</label><br />
+		<label for="title">Book Title:</label><br />
 		<input
 			type="text"
 			id="title"
-			value="<% if(locals.newBookEJS) {%><%=newBookEJS.title%> <% };%>"
 			name="title"
+			required
 		/><br />
 		<label for="author">Author:</label><br />
-		<input type="text" id="author" name="author" value="<% if(locals.newBookEJS) {%><%=newBookEJS.author%> <% };%>" /><br />
+		<input type="text" id="author" name="author" required/><br />
 		<label for="rating">Rating (/10):</label><br />
-		<input type="text" id="rating" name="rating" value="<% if(locals.newBookEJS) {%><%=newBookEJS.rating%> <% };%>" /><br />
+		<input type="text" id="rating" name="rating" required/><br />
 		<label for="date">Date Read:</label><br />
-		<input type="date" id="date" name="date" value="<% if(locals.newBookEJS) {%><%=newBookEJS.date_read%> <%};%>"/><br />
+		<input type="date" id="date" name="date" required/><br />
 		<label for="isbn">ISBN:</label><br />
-		<input type="text" id="isbn" name="isbn" value="<% if(locals.newBookEJS) {%><%=newBookEJS.isbn%> <% };%>"/><br />
+		<input type="text" id="isbn" name="isbn" required/><br />
 		<label for="summary">Summary:</label><br />
-		<input type="text" id="summary" name="summary" value="<% if(locals.newBookEJS) {%><%=newBookEJS.summary%> <% };%>"/><br />
+		<input type="text" id="summary" name="summary" required/><br />
 		<label for="shortname">Short Name:</label><br />
-		<input type="text" id="shortname" name="shortname" value="<% if(locals.newBookEJS) {%><%=newBookEJS.short_name%> <% };%>"/><br />
+		<input type="text" id="shortname" name="shortname" required/><br />
 		<label for="description">Description:</label><br />
-		<textarea rows = "10" cols = "50" id="description" name="description" ><% if(locals.newBookEJS) {%><%=newBookEJS.description%><% };%></textarea><br />
+		<textarea rows = "10" cols = "50" id="description" name="description" required></textarea><br />
 		<input type="submit" value="Submit" />
 	</form>
 </div>
+
 <!-- <script>
 // $(document).on("keydown", function(event) {
 //     console.log("submit event");
